@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="bg-purple-100 shadow-md">
       <Container>
@@ -28,7 +29,7 @@ const Navbar = () => {
             <a className="text-gray-600" href="">
               Contact
             </a>
-            <button className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white font-semibold text-sm px-4 py-2 rounded">
+            <button className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white font-semibold text-sm px-4 py-2 rounded cursor-pointer">
               + New Ticket
             </button>
           </div>
