@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Tickets from "./components/Tickets";
 import TaskStatus from "./components/TaskStatus";
-import Container from "./components/container";
+import Container from "./components/Container";
 
 function App() {
   const [tickets, setTickets] = useState([]);
