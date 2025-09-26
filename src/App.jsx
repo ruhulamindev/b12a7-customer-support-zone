@@ -46,20 +46,10 @@ function App() {
       <Navbar />
 
       <Container>
-        <div className="flex flex-col md:flex-row gap-6 my-6">
-          <div className="md:w-2/3">
-            <Tickets tickets={tickets} addToTask={addToTask} />
-          </div>
-          <div className="md:w-1/3 space-y-6">
-            <TaskStatus task={task} completeTask={completeTask} title="Task Status" />
-            <TaskStatus task={resolved} title="Resolved Task" completedLabel="Complete" />
-          </div>
-          </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] my-[50px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] my-[50px] order-1 md:order-3">
           <div className="rounded p-7 text-white h-[220px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] flex flex-col items-center justify-center relative overflow-hidden">
             <h2 className="font-bold text-[35px] z-10">In-Progress</h2>
-            <p className="font-semibold text-[30px] z-10">{inProgressCount}</p>              
+            <p className="font-semibold text-[30px] z-10">{inProgressCount}</p>
             <img
               src="/vector1.png"
               alt="vector img"
@@ -84,6 +74,23 @@ function App() {
               src="/vector1.png"
               alt="vector-right"
               className="absolute right-0 bottom-0 h-full opacity-60 object-contain scale-x-[-1]"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row gap-6 my-6">
+          <div className="md:w-2/3 order-3 md:order-1">
+            <Tickets tickets={tickets} addToTask={addToTask} />
+          </div>
+          <div className="md:w-1/3 space-y-6 order-2">
+            <TaskStatus
+              task={task}
+              completeTask={completeTask}
+              title="Task Status"
+            />
+            <TaskStatus
+              task={resolved}
+              title="Resolved Task"
+              completedLabel="Complete"
             />
           </div>
         </div>
