@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -21,10 +23,10 @@ function App() {
   const addToTask = (ticket) => {
     if (!task.find((t) => t.id === ticket.id)) {
       setTask([...task, ticket]);
-      alert(`✅ In Progress`);
+      toast.success("In Progress");
       setInProgressCount(inProgressCount + 1);
     } else {
-      alert("Ticket already in Task Status");
+      toast.warning("Ticket already in Task Status");
     }
   };
 
@@ -32,13 +34,15 @@ function App() {
     const completedTask = task.find((t) => t.id === id);
     if (!completedTask) return;
 
-    alert(`✅ completed`);
+    toast.success("Task Completed!");
 
     setTask(task.filter((t) => t.id !== id));
     setInProgressCount(inProgressCount - 1);
 
     setResolved([...resolved, completedTask]);
     setResolvedCount(resolvedCount + 1);
+
+    setTickets(tickets.filter((t) => t.id !== id));
   };
 
   return (
@@ -53,27 +57,27 @@ function App() {
             <img
               src="/vector1.png"
               alt="vector img"
-              className="absolute left-0 bottom-0 h-full opacity-60 object-contain"
+              className="absolute left-0 bottom-0 h-full opacity-70 object-contain"
             />
             <img
               src="/vector1.png"
               alt="vector-right"
-              className="absolute right-0 bottom-0 h-full opacity-60 object-contain scale-x-[-1]"
+              className="absolute right-0 bottom-0 h-full opacity-70 object-contain scale-x-[-1]"
             />
           </div>
-          <div className="rounded p-7 text-white h-[220px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="rounded p-7 text-white h-[220px] bg-gradient-to-r from-[#54CF68] to-[#00827A] flex flex-col items-center justify-center relative overflow-hidden">
             <h2 className="font-bold text-[35px] z-10">Resolved</h2>
             <p className="font-semibold text-[30px] z-10">{resolvedCount}</p>
 
             <img
               src="/vector1.png"
               alt="vector img"
-              className="absolute left-0 bottom-0 h-full opacity-60 object-contain"
+              className="absolute left-0 bottom-0 h-full opacity-90 object-contain"
             />
             <img
               src="/vector1.png"
               alt="vector-right"
-              className="absolute right-0 bottom-0 h-full opacity-60 object-contain scale-x-[-1]"
+              className="absolute right-0 bottom-0 h-full opacity-80 object-contain scale-x-[-1]"
             />
           </div>
         </div>
@@ -95,7 +99,7 @@ function App() {
           </div>
         </div>
       </Container>
-
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );
