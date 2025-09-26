@@ -42,9 +42,18 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-2">Social Links</h4>
             <ul className="space-y-1 text-sm">
-              <li>@CS — Ticket System</li>
-              <li>@CS — Ticket System</li>
-              <li>@CS — Ticket System</li>
+              <li className="flex gap-2 items-center mt-3">
+                <img src="/tweter.png" alt="" />
+                @CS — Ticket System</li>
+              <li className="flex gap-2 items-center mt-3">
+                <img src="/linkedin.png" alt="" />
+                @CS — Ticket System</li>
+              <li className="flex gap-2 items-center mt-3">
+                <img src="/facebook.png" alt="" />
+                @CS — Ticket System</li>
+              <li className="flex gap-2 items-center mt-3">
+                <img src="/message.png" alt="" />
+                support@cst.com</li>
             </ul>
           </div>
         </div>

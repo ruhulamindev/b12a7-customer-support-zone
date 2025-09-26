@@ -8,7 +8,7 @@ function App() {
       <Navbar />
 
       <Container>
-        <div className="grid grid-cols-2 gap-[20px] my-[50px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] my-[50px]">
           <div className="rounded p-7 text-white h-[220px] bg-gradient-to-r from-[#632EE3] to-[#9F62F2] flex flex-col items-center justify-center relative overflow-hidden">
             <h2 className="font-bold text-[35px] z-10">In-Progress</h2>
             <p className="font-semibold text-[30px] z-10">0</p>
