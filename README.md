@@ -1,72 +1,3 @@
-
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-007
-
-### 📅 Deadline For 60 marks: 27th September, 2025 (11:59 pm ⏱️)
-
-### 📅 No Deadline For 50 marks 
-
-### 📅 Deadline For 30 marks: Any time after 27th September , 2025 (11:59pm⏱️).
-
----
-
-# Private Repository: https://classroom.github.com/a/VVl8VKya
-
-# Customer Support Zone
-
-This project is a React-based **Customer Support Zone** designed to display customer tickets, track progress, and mark them as resolved. It follows a Figma design and includes additional features like status management, responsiveness, and toast notifications using **React-Toastify**.
-
----
-
-## 📌 Features & Requirements 
-
-### ✅ Navbar 
-
-* Website name/logo on the **left**.
-* Menu items and **New Ticket** button on the **right**.
-
-### ✅ Banner
-
-* Banner section designed according to Figma.
-* Shows a **linear gradient** background.
-* Displays ticket statistics:
-
-  * **In Progress Count**
-  * **Resolved Count** (default = 0).
-
-### ✅ Main Section
-
-1. **JSON Data **
-
-   * Created **10–15 tickets** with the following properties:
-
-     * `id`, `title`, `description`, `customer`, `priority`, `status`, `createdAt`.
-
-2. **Ticket Cards**
-
-   * Display all ticket information in a **card layout**.
-   * Cards arranged in a **2-column grid** (left side).
-
-3. **Task Status Section**
-
-   * Clicking a card adds it to the **Task Status Section** (right side) and shows alert. It will increase the count of in-progress in banner
-   * Task Status shows:
-
-     * Ticket Title
-     * **Complete Button**
-   * Clicking **Complete Button**:
-
-     * show alert
-     
-
-
-### ✅ Footer 
-
-* Designed according to Figma.
-
-### ✅ Responsiveness 
-
-* The entire website is **responsive** for mobile devices.
-
 ### ✅ Readme: 
 Create a README file to answer the following question-
 
@@ -77,25 +8,51 @@ Create a README file to answer the following question-
  - How is event handling done in React?
 
 ---
+Answer:
+1. What is JSX, and why is it used?
+ JSX হলো JavaScript XML। এটি React-এ একটি syntax extension, যেটি HTML এর মতো দেখতে কোড লিখতে দেয় JavaScript-এর ভেতরে।
+ JSX ব্যবহার করলে UI লেখা অনেক সহজ হয় এবং কোড পড়তেও সুবিধা হয়।
 
-### 
+2. What is the difference between State and Props?
+State:
+ * State হলো component-এর ভেতরের data যেটা change হতে পারে এবং সেই change হলে UI re-render হয়।
 
-## 📌 Challenge Requirements 
+Props:
+ * Props হলো parent component থেকে child component-এ পাঠানো data, যেটা child শুধু পড়তে পারে (read-only)।
 
-### 🔔 React-Toastify 
+3. What is the useState hook, and how does it work?
+ useState হলো React-এর একটি hook, যা function component-এর মধ্যে state তৈরি করতে ব্যবহৃত হয়।
 
-* Used **React-Toastify** to replace all alerts with stylish toast notifications.
+Syntax:
+const [count, setCount] = useState(0);
 
-### 📝 Task Completion Logic 
+here,
+* count হলো বর্তমান state-এর মান।
+* setCount হলো একটি function, যেটা দিয়ে state update করা হয়।
+* যখন state update হয়, তখন component আবার render হয়।
 
-Clicking **Complete Button**:
+4. How can you share state between components in React?
 
-1. It is **removed from Task Status**. 
-2. It is added to the **Resolved List**. 
-3. The **In Progress count decreases**. 
-4. The **Resolved count increases**. 
-5. It is removed from the **Customer Tickets list**. 
+ * Lifting State Up → common parent component-এ state রাখা হয় এবং props দিয়ে child-এ পাঠানো হয়।
 
+ * Context API → state বা data অনেক স্তরের component-এ পাঠানোর জন্য।
+
+ * State Management Libraries → Redux, Zustand, Recoil ইত্যাদি ব্যবহার করা যায়।
+
+5. How is event handling done in React?
+ React-এ event handling করা হয় JavaScript event এর মতোই, তবে attribute গুলো camelCase এ লেখা হয়।
+
+Example:
+function Button() {
+  const handleClick = () => {
+    alert("Button Clicked!");
+  };
+  return <button onClick={handleClick}>Click Me</button>;
+}
+
+here,
+ * onClick হলো React event handler।
+ * Event function (handleClick) define করে সেটি button এ attach করা হয়েছে।
 
 ---
 
